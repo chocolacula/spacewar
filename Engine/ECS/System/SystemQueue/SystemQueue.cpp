@@ -1,25 +1,31 @@
 #include "SystemQueue.h"
 
 #include <algorithm> 
+#include <stdexcept>
 
 void SystemQueue::Add(ISystem* system, int priority)
 {
-	const auto it = std::find_if(_data.begin(), _data.end(), 
-		[system](QueueEntry e) { return e.system == system; });
-
-	if (it != _data.end())
 	{
-		throw std::runtime_error("The System already exist in queue");
+		//TODO it has O(n) complexity, at the moment it's fine but could be optimized
+		const auto it = std::find_if(_data.begin(), _data.end(),
+			[system](QueueEntry e) { return e.system == system; });
+
+		if (it != _data.end())
+		{
+			throw std::runtime_error("The System already exist in queue");
+		}
 	}
 
-	_data.emplace_back(system, priority);
-
-	const auto bound = std::upper_bound(_data.rbegin() + 1, _data.rend(), priority);
-
-	if (bound != _data.rend())
+	auto it = _data.rbegin();
+	for(; it != _data.rend(); ++it)
 	{
-		std::rotate(_data.rbegin(), _data.rbegin() + 1, bound);
+		if (it->priority <= priority)
+		{
+			break;
+		}
 	}
+	
+	_data.emplace(it.base(), system, priority);
 }
 
 void SystemQueue::Remove(ISystem* system)
@@ -42,8 +48,3 @@ SystemQueue::QueueEntry::QueueEntry(ISystem* system, const int priority) :
 	system(system),
 	priority(priority)
 {}
-
-bool operator< (const int priority, const SystemQueue::QueueEntry& right)
-{
-	return priority < right.priority;
-}

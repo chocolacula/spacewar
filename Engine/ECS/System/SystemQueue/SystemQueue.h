@@ -25,5 +25,3 @@ public:
 private:
 	std::vector<QueueEntry> _data;
 };
-
-bool operator< (int priority, const SystemQueue::QueueEntry& right);
