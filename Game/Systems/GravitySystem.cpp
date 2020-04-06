@@ -5,6 +5,8 @@
 #include "../Components/GravityBigObject.h"
 #include "../Components/GravitySmallObject.h"
 
+const float GravitySystem::SPIN_FACTOR = 0.6;
+
 void GravitySystem::Run()
 {
 	auto bigs = Scene::GetComponentManager().FindAllComponents<GravityBigObject>();
@@ -42,7 +44,7 @@ void GravitySystem::Run()
 
 			// add a little bit of velocity with direction 90 degree to the right
 			// because realistic behaviour isn't fun 
-			subjectVelocity->value += Vector2(-deltaY, deltaX) * (big->mass * effect / 6);
+			subjectVelocity->value += Vector2(-deltaY, deltaX) * (big->mass * effect * SPIN_FACTOR);
 		}
 	}
 }
