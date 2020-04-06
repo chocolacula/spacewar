@@ -6,8 +6,8 @@
 #include "../../../Scene.h"
 #include "../../Component/Embedded/Mesh.h"
 #include "../../Entity/Entity.h"
-#include "../../../Math.h"
 #include "../../../Types/Color.h"
+#include "../../../Utils/Math.h"
 
 void MeshRenderSystem::Run()
 {

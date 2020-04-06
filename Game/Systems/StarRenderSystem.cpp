@@ -3,9 +3,9 @@
 #include <wtypes.h>
 #include <GL/gl.h>
 
-#include "../../Engine/Random/Random.h"
 #include "../../Engine/Scene.h"
 #include "../../Engine/Types/Color.h"
+#include "../../Engine/Utils/Random.h"
 
 StarRenderSystem::StarRenderSystem(Color3 color) :
 	_color(color)

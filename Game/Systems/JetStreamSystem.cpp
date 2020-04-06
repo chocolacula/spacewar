@@ -4,9 +4,9 @@
 #include <GL/gl.h>
 
 #include "../../Engine/Engine.h"
-#include "../../Engine/Math.h"
-#include "../../Engine/Random/Random.h"
 #include "../../Engine/Scene.h"
+#include "../../Engine/Utils/Math.h"
+#include "../../Engine/Utils/Random.h"
 #include "../Components/JetStreamParticles.h"
 
 JetStreamSystem::JetStreamSystem(float updateTime) :

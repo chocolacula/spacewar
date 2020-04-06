@@ -2,8 +2,8 @@
 
 #include "../../../Engine/ECS/Component/Embedded/Velocity.h"
 #include "../../../Engine/Engine.h"
-#include "../../../Engine/Math.h"
 #include "../../../Engine/Scene.h"
+#include "../../../Engine/Utils/Math.h"
 #include "../../Components/Collider/ColliderTarget.h"
 #include "../../Components/Enemy.h"
 #include "../../Components/GravityBigObject.h"
