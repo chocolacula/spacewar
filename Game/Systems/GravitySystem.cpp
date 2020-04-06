@@ -5,7 +5,7 @@
 #include "../Components/GravityBigObject.h"
 #include "../Components/GravitySmallObject.h"
 
-const float GravitySystem::SPIN_FACTOR = 0.6;
+const float GravitySystem::SPIN_FACTOR = 0.15f;
 
 void GravitySystem::Run()
 {
