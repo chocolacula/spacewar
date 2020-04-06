@@ -8,14 +8,12 @@
 class Entity
 {
 public:
-	Entity();
+	Entity() = default;
 
 	explicit Entity(const Vector2& position);
 	explicit Entity(const Transform& transform);
 
 	~Entity();
-
-	int GetID() const;
 
     template<typename T>
 	T* GetComponent();
@@ -31,6 +29,5 @@ public:
 	Transform transform;
 
 private:
-    int _id; 
     std::unordered_map<size_t, Component*> _componentsInEntity;
 };

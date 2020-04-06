@@ -9,8 +9,3 @@ Entity* Component::GetEntity() const
 {
     return _entity;
 }
-
-int Component::GetEntityID() const
-{
-    return _entity->GetID();
-}
