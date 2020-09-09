@@ -4,7 +4,7 @@
 #include "../../Engine/ECS/Component/Embedded/Velocity.h"
 #include "../../Engine/ECS/Entity/Entity.h"
 #include "../../Engine/Scene.h"
-#include "../../Engine/Utils/Math.h"
+#include "../../Engine/Utils/MathUtils.h"
 #include "../Components/Blast.h"
 #include "../Components/Collider/ColliderTarget.h"
 #include "../Components/GravitySmallObject.h"
@@ -41,7 +41,7 @@ void BlastSystem::Run()
 				->SetTriangles(std::move(shard.triangles));
 
 			shardEntity->AddComponent<Velocity>()
-				->value = Vector2(Math::DegreeToRad(angle) * blast->impulse)
+				->value = Vector2(MathUtils::DegreeToRad(angle) * blast->impulse)
 					+ entity->GetComponent<Velocity>()->value;
 
 			shardEntity->AddComponent<GravitySmallObject>();

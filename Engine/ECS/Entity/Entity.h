@@ -77,7 +77,7 @@ void Entity::RemoveComponent()
 		return;
 	}
 
-	Scene::GetComponentManager().Destroy(it->second);
+	Scene::GetComponentManager().Destroy(typeHash, it->second);
 
 	_componentsInEntity.erase(typeHash);
 }

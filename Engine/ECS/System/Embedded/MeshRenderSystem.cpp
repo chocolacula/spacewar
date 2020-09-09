@@ -1,13 +1,12 @@
 #include "MeshRenderSystem.h"
 
-#include <wtypes.h>
-#include <GL/gl.h>
+#include <GLFW/glfw3.h>
 
 #include "../../../Scene.h"
 #include "../../Component/Embedded/Mesh.h"
 #include "../../Entity/Entity.h"
 #include "../../../Types/Color.h"
-#include "../../../Utils/Math.h"
+#include "../../../Utils/MathUtils.h"
 
 void MeshRenderSystem::Run()
 {
@@ -26,7 +25,7 @@ void MeshRenderSystem::Render(const Mesh& mesh, const Transform& transform)
 {
 	glLoadIdentity();
 	glTranslatef(transform.position.x, transform.position.y, 0.f);
-	glRotatef(Math::RadToDegree(transform.angle), 0.f, 0.f, 1.f);
+	glRotatef(MathUtils::RadToDegree(transform.angle), 0.f, 0.f, 1.f);
 
 	glRotatef(-90.f, 0, 0, 1);
 
@@ -50,6 +49,4 @@ void MeshRenderSystem::Render(const Mesh& mesh, const Transform& transform)
 	}
 
 	glEnd();
-
-	
 }

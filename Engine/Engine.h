@@ -1,6 +1,6 @@
 #pragma once
 
-#include <wtypes.h>
+#include <GLFW/glfw3.h>
 
 class Engine
 {
@@ -19,22 +19,20 @@ private:
 	static int _windowHeight;
 	static int _maxFPS;
 
-	static HDC _windowDC;
-	static HGLRC _openGLHandle;
+//	static HDC _windowDC;
+//	static HGLRC _openGLHandle;
 
-	static LARGE_INTEGER _clockFrequency;
-	static LARGE_INTEGER _clockLastTick;
-
-	static float _deltaTime;
+	static float  _deltaTime;
+	static double _lastTime;
 
 	static void Init(const char* name, int windowWidth, int windowHeight);
 	static void InitWindow(const char* name, int windowWidth, int windowHeight);
 	
 	static void InitOpenGL();
-	static void ResetOpenGL();
+//	static void ResetOpenGL();
 
-	static void NextFrame();
+    static void MainLoop();
+	static void RenderNextFrame();
 
-	static HWND _windowHandle;
-	static LRESULT CALLBACK WindowProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam);
+    static GLFWwindow* _window;
 };

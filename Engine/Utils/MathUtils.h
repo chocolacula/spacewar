@@ -1,9 +1,9 @@
 #pragma once
 
-class Math
+class MathUtils
 {
 public:
-	Math() = delete;
+	MathUtils() = delete;
 
 	static float RadToDegree(float rads);
 	static float DegreeToRad(float degrees);

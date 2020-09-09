@@ -4,6 +4,7 @@
 #include <typeinfo>
 #include <utility>
 #include <vector>
+#include <algorithm>
 
 #include "Component.h"
 #include "ComponentCollection.h"

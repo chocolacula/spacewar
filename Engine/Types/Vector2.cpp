@@ -32,12 +32,12 @@ float Vector2::DotProduct(const Vector2& other) const
 
 float Vector2::Length() const
 {
-	return std::sqrtf(DotProduct(*this));
+	return std::sqrt(DotProduct(*this));
 }
 
 float Vector2::Angle() const
 {
-	return std::atan2f(y, x);
+	return std::atan2(y, x);
 }
 
 Vector2 Vector2::Normalize() const

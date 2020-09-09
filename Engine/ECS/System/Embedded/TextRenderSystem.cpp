@@ -1,7 +1,6 @@
 #include "TextRenderSystem.h"
 
-#include <wtypes.h>
-#include <GL/gl.h>
+#include <GLFW/glfw3.h>
 
 #include "../../../Scene.h"
 #include "../../Component/Embedded/Text.h"

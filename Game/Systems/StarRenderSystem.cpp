@@ -1,7 +1,6 @@
 #include "StarRenderSystem.h"
 
-#include <wtypes.h>
-#include <GL/gl.h>
+#include <GLFW/glfw3.h>
 
 #include "../../Engine/Scene.h"
 #include "../../Engine/Types/Color.h"

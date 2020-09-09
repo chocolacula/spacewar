@@ -9,7 +9,7 @@
 #include "../Engine/ECS/System/Embedded/TextRenderSystem.h"
 #include "../Engine/Scene.h"
 #include "../Engine/Types/Vector2.h"
-#include "../Engine/Utils/Math.h"
+#include "../Engine/Utils/MathUtils.h"
 #include "Components/Blast.h"
 #include "Components/Collider/ColliderLethal.h"
 #include "Components/Collider/ColliderTarget.h"
@@ -36,16 +36,16 @@
 Text* Game::_endOfGameText = nullptr;
 
 Ship Game::_userShip = {
-	{{-Scene::scale.x * 0.75f, -Scene::scale.y * 0.75f}, Math::DegreeToRad(45.f)},
+	{{-Scene::scale.x * 0.75f, -Scene::scale.y * 0.75f}, MathUtils::DegreeToRad(45.f) },
 	nullptr
 };
 
 std::vector<Ship> Game::_enemyShips = {
-	{{{Scene::scale.x * 0.25f, Scene::scale.y * 0.75f}, Math::DegreeToRad(-125.f)},
+	{{ {Scene::scale.x * 0.25f, Scene::scale.y * 0.75f}, MathUtils::DegreeToRad(-125.f) },
 	nullptr},
-	{{{Scene::scale.x * 0.75f, Scene::scale.y * 0.75f}, Math::DegreeToRad(-135.f)},
+	{{ {Scene::scale.x * 0.75f, Scene::scale.y * 0.75f}, MathUtils::DegreeToRad(-135.f) },
 	nullptr},
-	{{{Scene::scale.x * 0.75f, Scene::scale.y * 0.25f}, Math::DegreeToRad(-145.f)},
+	{{ {Scene::scale.x * 0.75f, Scene::scale.y * 0.25f}, MathUtils::DegreeToRad(-145.f) },
 	nullptr}
 };
 

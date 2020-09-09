@@ -1,6 +1,6 @@
 #include "Transform.h"
 
-#include "corecrt_math_defines.h"
+#include <cmath>
 
 Transform::Transform() :
 	position(Vector2::ZERO),

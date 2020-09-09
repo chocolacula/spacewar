@@ -3,7 +3,7 @@
 #include "../../../Engine/ECS/Component/Embedded/Velocity.h"
 #include "../../../Engine/Engine.h"
 #include "../../../Engine/Scene.h"
-#include "../../../Engine/Utils/Math.h"
+#include "../../../Engine/Utils/MathUtils.h"
 #include "../../Components/Collider/ColliderTarget.h"
 #include "../../Components/Enemy.h"
 #include "../../Components/GravityBigObject.h"
@@ -124,12 +124,12 @@ void EnemySystem::RotateFrom(Enemy* enemy, const Transform& target)
 	if (dotProduct > 0)
 	{
 		// turn right
-		enemyTransform.angle -= Math::DegreeToRad(enemy->angleVelocity) * Engine::DeltaTime();
+		enemyTransform.angle -= MathUtils::DegreeToRad(enemy->angleVelocity) * Engine::DeltaTime();
 	}
 	else
 	{
 		// turn left		
-		enemyTransform.angle += Math::DegreeToRad(enemy->angleVelocity) * Engine::DeltaTime();
+		enemyTransform.angle += MathUtils::DegreeToRad(enemy->angleVelocity) * Engine::DeltaTime();
 	}
 }
 

@@ -1,11 +1,10 @@
 #include "JetStreamSystem.h"
 
-#include <wtypes.h>
-#include <GL/gl.h>
+#include <GLFW/glfw3.h>
 
 #include "../../Engine/Engine.h"
 #include "../../Engine/Scene.h"
-#include "../../Engine/Utils/Math.h"
+#include "../../Engine/Utils/MathUtils.h"
 #include "../../Engine/Utils/Random.h"
 #include "../Components/JetStreamParticles.h"
 
@@ -42,7 +41,7 @@ void JetStreamSystem::Render(JetStreamParticles* particles)
 	
 	glLoadIdentity();
 	glTranslatef(transform.position.x, transform.position.y, 0.f);
-	glRotatef(Math::RadToDegree(transform.angle), 0.f, 0.f, 1.f);
+	glRotatef(MathUtils::RadToDegree(transform.angle), 0.f, 0.f, 1.f);
 
 	glRotatef(90.f, 0, 0, 1);
 	
